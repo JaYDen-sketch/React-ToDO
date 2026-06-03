@@ -1,8 +1,7 @@
 :root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Soft, classic light-mode backgrounds */
   background-color: #f8fafc; 
-  color: #334155; /* Slate gray for readable, professional text */
+  color: #334155;
 }
 
 body {
@@ -11,11 +10,10 @@ body {
 }
 
 .app-container {
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
 }
 
-/* Classic Deep Indigo Title */
 h1 {
   text-align: center;
   color: #4f46e5;
@@ -25,61 +23,56 @@ h1 {
   letter-spacing: -1px;
 }
 
-/* Clean White Input Form Container */
+/* Form Restructuring */
 .task-form {
   display: flex;
+  flex-direction: column;
   gap: 12px;
   margin-bottom: 30px;
   background: #ffffff;
-  padding: 16px;
+  padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   border: 1px solid #e2e8f0;
 }
 
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.main-row input {
+  flex: 1;
+}
+
+.meta-row select, .meta-row input {
+  flex: 1;
+}
+
 .task-form input, .task-form select {
-  padding: 12px;
+  padding: 10px 12px;
   background: #f1f5f9;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   color: #1e293b;
   font-size: 0.95rem;
-  transition: all 0.2s ease;
 }
 
-.task-form input {
-  flex: 2;
-}
-
-.task-form input:focus, .task-form select:focus {
-  outline: none;
-  border-color: #4f46e5;
-  background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-}
-
-.task-form select {
-  flex: 1;
-  cursor: pointer;
-}
-
-/* Elegant Royal Blue Button */
 .task-form button {
-  padding: 12px 28px;
+  padding: 10px 28px;
   background: #4f46e5;
   border: none;
   border-radius: 8px;
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
 .task-form button:hover {
   background: #4338ca;
 }
 
-/* Kanban Columns Board */
+/* Kanban Layout */
 .board {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -112,14 +105,13 @@ h1 {
   margin-top: 15px;
 }
 
-/* Light Card Styling */
+/* Task Cards */
 .task-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   padding: 16px;
   border-radius: 8px;
   cursor: grab;
-  position: relative;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -129,15 +121,9 @@ h1 {
   transform: translateY(-2px);
 }
 
-.task-card:active {
-  cursor: grabbing;
-  transform: scale(0.98);
-}
-
-/* Completed State Adjustments */
 .task-card.completed {
   background: #f8fafc;
-  border-left: 4px solid #10b981; /* Emerald Green line */
+  border-left: 4px solid #10b981;
   opacity: 0.65;
 }
 
@@ -153,47 +139,66 @@ h1 {
   margin-bottom: 10px;
 }
 
+.badges {
+  display: flex;
+  gap: 6px;
+}
+
 .task-text {
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   font-size: 1rem;
   font-weight: 500;
   color: #1e293b;
-  word-break: break-word;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 8px;
+}
+
+.due-date-display {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
 }
 
 .drag-hint {
   color: #94a3b8;
   font-size: 0.75rem;
-  display: block;
 }
 
-/* Sophisticated Pastel Category Colors */
+/* Category Badges */
 .tag {
-  font-size: 0.72rem;
-  padding: 4px 10px;
-  border-radius: 9999px; /* Rounded pill style */
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: 9999px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
+.tag.work { background: #dbeafe; color: #1e40af; }
+.tag.personal { background: #fce7f3; color: #9d174d; }
+.tag.shopping { background: #fef3c7; color: #92400e; }
+.tag.others { background: #e2e8f0; color: #475569; }
 
-.tag.work { background: #dbeafe; color: #1e40af; }      /* Soft Blue */
-.tag.personal { background: #fce7f3; color: #9d174d; }  /* Soft Pink */
-.tag.shopping { background: #fef3c7; color: #92400e; }  /* Soft Amber */
-.tag.others { background: #e2e8f0; color: #475569; }    /* Soft Gray */
+/* Classic Color-Coded Priorities */
+.prio-badge {
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.prio-badge.high { background: #fee2e2; color: #b91c1c; }     /* Soft Red */
+.prio-badge.medium { background: #ffedd5; color: #c2410c; }   /* Soft Orange */
+.prio-badge.low { background: #f0fdf4; color: #15803d; }      /* Soft Green */
 
-/* Delete Button styling */
 .delete-btn {
   background: none;
   border: none;
   color: #ef4444;
   cursor: pointer;
   font-size: 0.95rem;
-  padding: 4px;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
-
-.delete-btn:hover {
-  background: #fee2e2;
 }
