@@ -1,0 +1,199 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Soft, classic light-mode backgrounds */
+  background-color: #f8fafc; 
+  color: #334155; /* Slate gray for readable, professional text */
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Classic Deep Indigo Title */
+h1 {
+  text-align: center;
+  color: #4f46e5;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* Clean White Input Form Container */
+.task-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
+}
+
+.task-form input, .task-form select {
+  padding: 12px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #1e293b;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.task-form input {
+  flex: 2;
+}
+
+.task-form input:focus, .task-form select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.task-form select {
+  flex: 1;
+  cursor: pointer;
+}
+
+/* Elegant Royal Blue Button */
+.task-form button {
+  padding: 12px 28px;
+  background: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.task-form button:hover {
+  background: #4338ca;
+}
+
+/* Kanban Columns Board */
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.column {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  min-height: 450px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.column h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 12px;
+  color: #475569;
+  text-align: center;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 15px;
+}
+
+/* Light Card Styling */
+.task-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: grab;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.task-card:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+}
+
+/* Completed State Adjustments */
+.task-card.completed {
+  background: #f8fafc;
+  border-left: 4px solid #10b981; /* Emerald Green line */
+  opacity: 0.65;
+}
+
+.task-card.completed .task-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-text {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+.drag-hint {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  display: block;
+}
+
+/* Sophisticated Pastel Category Colors */
+.tag {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 9999px; /* Rounded pill style */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag.work { background: #dbeafe; color: #1e40af; }      /* Soft Blue */
+.tag.personal { background: #fce7f3; color: #9d174d; }  /* Soft Pink */
+.tag.shopping { background: #fef3c7; color: #92400e; }  /* Soft Amber */
+.tag.others { background: #e2e8f0; color: #475569; }    /* Soft Gray */
+
+/* Delete Button styling */
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+}
