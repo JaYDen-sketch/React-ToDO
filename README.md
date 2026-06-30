@@ -2,9 +2,6 @@
 
 A task manager built with React that goes beyond a basic to-do list — tasks are organized into a drag-and-drop Kanban board with categories, priorities, and due dates, and everything persists locally in the browser.
 
-[Live Demo](#) · [Report a Bug](../../issues)
-
-> Replace the live demo link above once deployed (e.g. via Vercel or Netlify), and swap this line for a screenshot/GIF of the board in action — it's the first thing recruiters look at.
 
 ## Features
 
